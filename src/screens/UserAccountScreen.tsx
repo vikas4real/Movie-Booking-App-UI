@@ -13,8 +13,8 @@ import CustomIcon from '../components/CustomIcon';
 
 const UserAccountScreen = ({navigation}: any) => {
   return (
-    <SafeAreaView style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.Black} />
+    <View style={styles.ScreenContainer}>
+      <StatusBar translucent backgroundColor={COLORS.Black} />
       <View style={styles.HeaderContainer}>
         <AppHeader
           name="close"
@@ -97,19 +97,18 @@ const UserAccountScreen = ({navigation}: any) => {
       <View style={styles.AppDeveloperInfo}>
         <Text style={styles.AppDveloperText}>Developed by Vikas Pandey</Text>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   ScreenContainer: {
-    display: 'flex',
     flex: 1,
     backgroundColor: COLORS.Black,
+    marginTop: StatusBar.currentHeight,
   },
   HeaderContainer: {
     marginHorizontal: SPACING.space_36,
-    marginTop: SPACING.space_20 * 2,
   },
   AvatarContainer: {
     alignItems: 'center',

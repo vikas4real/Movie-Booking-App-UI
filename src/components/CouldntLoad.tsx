@@ -4,7 +4,7 @@ import {COLORS, FONTFAMILY, FONTSIZE, SPACING} from '../theme/theme';
 
 const CouldntLoad = (props: any) => {
   return (
-    // TODO
+    // TODO:
     <View style={styles.container}>
       <Text>Couldn't Load</Text>
       <TouchableOpacity style={styles.retryButton} onPress={() => props.action}>

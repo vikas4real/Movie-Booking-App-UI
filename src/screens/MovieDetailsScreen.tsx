@@ -89,8 +89,8 @@ const MovieDetailsScreen = ({navigation, route}: any) => {
 
   // If data available
   return (
-    <SafeAreaView style={{backgroundColor: COLORS.Black}}>
-      <StatusBar backgroundColor={COLORS.Black} />
+    <View style={{backgroundColor: COLORS.Black}}>
+      <StatusBar translucent backgroundColor="transparent" />
       <ScrollView style={styles.ScreenContainer} bounces={false}>
         <View>
           <ImageBackground
@@ -196,7 +196,7 @@ const MovieDetailsScreen = ({navigation, route}: any) => {
           <Text style={styles.buttonText}>Select Seats</Text>
         </TouchableOpacity>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

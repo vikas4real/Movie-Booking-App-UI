@@ -7,7 +7,6 @@ import {
   StatusBar,
   StyleSheet,
   View,
-  SafeAreaView,
 } from 'react-native';
 import {COLORS, SPACING} from '../theme/theme';
 import {
@@ -119,9 +118,9 @@ const HomeScreen = ({navigation}: any) => {
   }
   // When data is available
   return (
-    <SafeAreaView style={{backgroundColor: COLORS.Black}}>
-      <StatusBar backgroundColor={COLORS.Black} />
-      <ScrollView style={styles.ScreenContainer} bounces={false}>
+    <View style={styles.ScreenContainer}>
+      <StatusBar translucent backgroundColor={COLORS.Black} />
+      <ScrollView bounces={false}>
         <View style={styles.InputHeaderContainer}>
           <InputHeader searchFunction={searchMoviesFunction} />
         </View>
@@ -212,14 +211,15 @@ const HomeScreen = ({navigation}: any) => {
           )}
         />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   ScreenContainer: {
-    display: 'flex',
+    flex: 1,
     backgroundColor: COLORS.Black,
+    marginTop: StatusBar.currentHeight,
   },
   ScrollViewContainer: {
     flex: 1,

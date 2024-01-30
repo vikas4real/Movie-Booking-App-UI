@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UserAccountScreen from '../screens/UserAccountScreen';
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   tabBarStyle: {
     backgroundColor: COLORS.Black,
     borderTopWidth: 0,
-    height: SPACING.space_20 * 5,
+    height: Platform.OS == 'ios' ? SPACING.space_20 * 5 : SPACING.space_20 * 4,
   },
   activeTabBackground: {
     backgroundColor: COLORS.Black,

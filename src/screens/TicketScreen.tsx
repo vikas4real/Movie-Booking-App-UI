@@ -55,8 +55,8 @@ const TicketScreen = ({navigation, route}: any) => {
     );
   }
   return (
-    <SafeAreaView style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.Black} />
+    <View style={styles.ScreenContainer}>
+      <StatusBar translucent backgroundColor={COLORS.Black} />
       <View style={styles.HeaderContainer}>
         <AppHeader
           name="close"
@@ -140,19 +140,18 @@ const TicketScreen = ({navigation, route}: any) => {
           />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   ScreenContainer: {
-    display: 'flex',
     flex: 1,
     backgroundColor: COLORS.Black,
+    marginTop: StatusBar.currentHeight,
   },
   HeaderContainer: {
     marginHorizontal: SPACING.space_36,
-    marginTop: SPACING.space_20 * 2,
   },
   TicketContainer: {flex: 1, justifyContent: 'center'},
   ImageStyle: {

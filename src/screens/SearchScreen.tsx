@@ -26,9 +26,8 @@ const SearchScreen = ({navigation}: any) => {
     }
   };
   return (
-    <SafeAreaView style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.Black} />
-
+    <View style={styles.ScreenContainer}>
+      <StatusBar translucent backgroundColor={COLORS.Black} />
       <FlatList
         ListHeaderComponent={
           <View style={styles.InputHeaderContainer}>
@@ -54,16 +53,15 @@ const SearchScreen = ({navigation}: any) => {
           />
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   ScreenContainer: {
-    display: 'flex',
     flex: 1,
     backgroundColor: COLORS.Black,
-    width: width,
+    marginTop: StatusBar.currentHeight,
   },
   InputHeaderContainer: {
     display: 'flex',

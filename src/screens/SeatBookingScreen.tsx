@@ -143,12 +143,9 @@ const SeatBookingScreen = ({navigation, route}: any) => {
   };
 
   return (
-    <SafeAreaView style={{backgroundColor: COLORS.Black}}>
-      <StatusBar backgroundColor={COLORS.Black} />
-      <ScrollView
-        style={styles.ScreenContainer}
-        showsVerticalScrollIndicator={false}
-        bounces={false}>
+    <View style={styles.ScreenContainer}>
+      <StatusBar translucent backgroundColor="transparent" />
+      <ScrollView showsVerticalScrollIndicator={false} bounces={false}>
         <View>
           <ImageBackground
             source={{
@@ -305,7 +302,7 @@ const SeatBookingScreen = ({navigation, route}: any) => {
             </View>
           )}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -313,7 +310,7 @@ export default SeatBookingScreen;
 
 const styles = StyleSheet.create({
   ScreenContainer: {
-    display: 'flex',
+    flex: 1,
     backgroundColor: COLORS.Black,
   },
   imageBG: {width: '100%', aspectRatio: 3072 / 1727},
