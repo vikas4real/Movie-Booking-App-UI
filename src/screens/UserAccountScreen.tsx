@@ -3,15 +3,33 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   StatusBar,
   Image,
+  TouchableOpacity,
+  ToastAndroid,
 } from 'react-native';
-import {COLORS, FONTFAMILY, FONTSIZE, SPACING} from '../theme/theme';
+import {
+  BORDERRADIUS,
+  COLORS,
+  FONTFAMILY,
+  FONTSIZE,
+  SPACING,
+} from '../theme/theme';
 import AppHeader from '../components/AppHeader';
 import CustomIcon from '../components/CustomIcon';
 
 const UserAccountScreen = ({navigation}: any) => {
+  const logoutHandler = async () => {
+    try {
+      ToastAndroid.showWithGravity(
+        'Logout Successfully',
+        1000,
+        ToastAndroid.BOTTOM,
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar translucent backgroundColor={COLORS.Black} />
@@ -27,7 +45,7 @@ const UserAccountScreen = ({navigation}: any) => {
           source={require('../assets/image/avatar.png')}
           style={styles.AvatarStyle}
         />
-        <Text style={styles.NameStyle}>John Doe</Text>
+        <Text style={styles.NameStyle}>Vikas Pandey</Text>
       </View>
       <View style={styles.ProfileItems}>
         <View style={styles.SubItem}>
@@ -93,9 +111,9 @@ const UserAccountScreen = ({navigation}: any) => {
             color={COLORS.White}
           />
         </View>
-      </View>
-      <View style={styles.AppDeveloperInfo}>
-        <Text style={styles.AppDveloperText}>Developed by Vikas Pandey</Text>
+        <TouchableOpacity style={styles.LogoutButton} onPress={logoutHandler}>
+          <Text style={styles.LogoutButtonText}>Logout</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -144,15 +162,20 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_14,
     color: COLORS.White,
   },
-  AppDeveloperInfo: {
+  LogoutButton: {
+    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 'auto',
+    paddingVertical: SPACING.space_6,
+    paddingHorizontal: SPACING.space_20,
+    borderRadius: BORDERRADIUS.radius_25,
+    borderWidth: 1,
+    borderColor: COLORS.White,
   },
-  AppDveloperText: {
-    fontFamily: FONTFAMILY.poppins_light,
+  LogoutButtonText: {
+    fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.WhiteRGBA75,
+    color: COLORS.White,
   },
 });
 export default UserAccountScreen;
